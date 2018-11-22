@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script src="LoginAndRegisterFunctions.js"></scriptC:></script>
+    <link href="Login.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+
+    <div id="background"></div>
+    <div id="modal">
+        <div  class="modal-header" id="modalHeader"> User  </div>
+        <div class="modal-content">
+        <div class="container-fluid">
+            <div class="row">
+            User Name:
+            </div>
+            <div class="row">
+            <input  id = "UserName"  type="text" value ="'New'">
+            </div>
+            <div class="row">
+            Login:
+            </div>
+            <div class="row">
+             <input  id = "LoginID" type="text" value ="0">
+            </div>
+            <div class="row">
+            Pass  :
+            </div>
+            <div class="row">
+            <input  id = "Pass" type="text" value="0" >
+            </div>
+
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button onclick="hideModal()">Cancel</button>
+            <button onclick="confirmInputAddRow()">Confirm</button>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div id="divLogin" class="FormContainer">
+
+    <fieldset>
+        <legend>Please enter Login  and Pass ID .</legend>
+        <br />
+        <table border="0" cellpadding="5">
+            <colgroup>
+                <col width="100" />
+                <col width="700" />
+            </colgroup>
+            <tr class="FormContainer">
+                <td>
+                   Login ID
+                </td>
+                <td>
+
+                    <input id="IDLogin"  type="text" size="20" value="" >
+                </td>
+            </tr>
+            <tr class="FormContainer">
+                <td>
+                   Pass ID
+                </td>
+                <td>
+
+                    <input id="IDPass"  type="text" size="20" value="" >
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <input type="button"  id ="IDbtnLoginUser"  name="btnLoginUser" value="Login" onclick="LoginClick()"/>
+        <input type="button"  id ="IDbtnRegisterUser"  name="btnRegister" value="Register" onclick="RegisterClick()"/>
+    </fieldset>
+
+</div>
+</body>
+</html>
