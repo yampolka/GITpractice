@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtr">
+
+    <div ng-repeat="man in people">
+        <h2>{{man.name}}</h2>
+        <input type="text" ng-model="man.age">
+        <p>my num is {{$index+1}}</p>
+        <hr>
+    </div>
+<div>
+    Введите имя: <input type="text" ng-model="name">
+    <button ng-click="addMan()">add Man</button>
+</div>
+</body>
+<script src="js/script.js"></script>
+</html>
