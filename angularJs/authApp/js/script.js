@@ -6,6 +6,8 @@ app.controller("myCtr", function ($scope, $http) {
 
     $scope.name="";
     $scope.pass="";
+    $scope.login="";
+
 
     $scope.checkUser = function () {
         let data = {
@@ -26,5 +28,31 @@ app.controller("myCtr", function ($scope, $http) {
         };
          $http(options).then(succFunc, errFunc);
     }
+
+    //adduser(login, pass ,name)
+
+    $scope.adduser = function () {
+        let data = {
+            "login": $scope.login,
+            "password": $scope.pass,
+            "name": $scope.name
+
+        };
+        let options = {
+            method: "GET",
+            url: serverUrl+"/addUser",
+            params: data
+        };
+        let succFunc = function(data){
+            console.log(data);
+            alert(data.data);
+           //???? this.checkUser();
+        };
+        let errFunc = function(data){
+            error.log(data);
+        };
+        $http(options).then(succFunc, errFunc);
+    }
+
 
 });
