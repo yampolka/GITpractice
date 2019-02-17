@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body ng-app="myApp" ng-controller="myCtr">
 <div class="row" style="height: 100%">
@@ -20,39 +21,39 @@
             <div class="col-md-4">
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 animated fadeIn" ng-show="auth">
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Login</label>
                         <input class="form-control" id="exampleInputEmail1" ng-model="name">
-                     </div>
+                    </div>
                     <div class="form-group">
                         <label for="examplePassword1">Password</label>
                         <input class="form-control" id="examplePassword1" ng-model="pass">
                     </div>
                     <button type="submit" class="btn btn-primary" ng-click="checkUser()">Submit</button>
+                    <button type="submit" class="btn btn-success" ng-click="toRegistration()">Register</button>
                 </form>
 
 
-
-                
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 animated fadeIn" ng-show="!auth">
 
                 <form>
                     <div class="form-group">
                         <label for="examplename">Name</label>
-                        <input class="form-control" id="examplename" ng-model="name">
+                        <input class="form-control" id="examplename" ng-model="nameReg">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input class="form-control" id="exampleInputPassword1" ng-model="pass">
+                        <input class="form-control" id="exampleInputPassword1" ng-model="passReg">
                     </div>
                     <div class="form-group">
                         <label for="examplelogin">Login</label>
                         <input class="form-control" id="examplelogin" ng-model="login">
                     </div>
                     <button type="submit" class="btn btn-primary" ng-click="adduser()">Submit</button>
+                    <button type="submit" class="btn btn-success" ng-click="toAuth()">Auth</button>
                 </form>
             </div>
         </div>

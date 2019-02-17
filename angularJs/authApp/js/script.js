@@ -9,6 +9,20 @@ app.controller("myCtr", function ($scope, $http) {
     $scope.login="";
 
 
+    $scope.nameReg = "";
+    $scope.passReg = "";
+
+    $scope.auth = true;
+
+    $scope.toRegistration=function(){
+        $scope.auth = false;
+    };
+
+    $scope.toAuth=function(){
+        $scope.auth = true;
+    };
+
+
     $scope.checkUser = function () {
         let data = {
             "login": $scope.name,
@@ -34,8 +48,8 @@ app.controller("myCtr", function ($scope, $http) {
     $scope.adduser = function () {
         let data = {
             "login": $scope.login,
-            "password": $scope.pass,
-            "name": $scope.name
+            "password": $scope.passReg,
+            "name": $scope.nameReg
 
         };
         let options = {
