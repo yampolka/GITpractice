@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<!--
+<head >
+    <script data-require="angular.js@1.1.5" data-semver="1.1.5"
+            src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <script src="js/paging.js"></script>
+
+
+</head>
+-->
+
+<head >
+    <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <link   rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <script src="js/paging.js"></script>
+
+
+</head>
+
+
+
+
+
+
+<body  ng-controller="ListController as list">
+
+
+<table border=1>
+    <thead>
+    <tr>
+        <th>ITEM CODE</th>
+        <th>ITEM NAME</th>
+        <th>ITEM DESCRIPTION</th>
+        <th>UNIT OF MEASURE</th>
+        <th>AVAILABLE</th>
+        <th>OPEN STOCK</th>
+        <th>RESTRICT STOCK</th>
+        <th>THRESHOLD</th>
+        <th>ACTIVE</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in filteredItems">
+        <td> {{item.itemCode}} </td>
+        <td> {{item.itemName}} </td>
+        <td> {{item.itemDescription}} </td>
+        <td> {{item.uom}} </td>
+        <td> {{item.available}} </td>
+        <td> {{item.openStock}} </td>
+        <td> {{item.restrictStock}} </td>
+        <td> {{item.threshold}} </td>
+        <td> {{item.active}} </td>
+    </tr>
+</table>
+<div data-pagination="" data-num-pages="numOfPages()"
+     data-current-page="curPage" data-max-size="maxSize"
+     data-boundary-links="true"></div>
+</body>
+
+</html>

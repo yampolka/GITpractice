@@ -1,0 +1,119 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<form class="ui large form segment">
+  <h3 class="ui header">Add a Link</h3>
+
+  <div class="field">
+    <label for="title">Title:</label>
+    <input name="title" id="title" #newtitle>  <!-- changed -->
+  </div>
+  <div class="field">
+    <label for="link">Link:</label>
+    <input  id="link" #newlink> <!-- changed -->
+  </div>
+  <button (click)="addArticle(newtitle, newlink)"
+  class="ui positive right floated button">
+Submit link
+</button>
+
+  <!-- added this button -->
+  
+</form>
+
+<table  style ="width:100%">
+  <tr>
+    <td style= "width:70">
+        <div>
+
+    
+            <h4 class="ui horizontal divider header">
+                List of  Articles
+               </h4>
+              
+            <table class="ui celled table">
+              <thead>
+              <tr>
+              <th>Title</th>
+              <th>Link</th>
+              <th>votes</th>
+              <th>select</th>
+              <th>up</th>
+              <th>down</th>
+            
+              </tr>
+             
+             </thead>
+             
+             <tr *ngFor="let artTable of sortedArticles()"  class="{{ifChosen(artTable)}}">
+             <td> {{ artTable.title }}  </td>
+             <td> {{ artTable.link }}  </td>
+             <td> {{ artTable.votes }}  </td>
+             <td>
+               <button (click)="selectArticle(artTable)"
+               class="ui positive right floated button">
+                select Article 
+             </button>
+             </td>
+             <td>
+                 <button (click)="artTable.voteUP()"
+                 class="ui positive right floated button">
+                   UP
+               </button>
+            
+             </td>
+             <td>  
+                 <button (click)="artTable.voteDown()"
+                 class="ui positive right floated button">
+                   Down
+               </button>
+            
+            </td>
+             </tr>
+            </table>
+            </div>
+            
+    </td>
+    <td style="width: 20%">
+      
+        <div class="ui statistic">
+            <h4 class="ui horizontal divider header">
+               Selected Article  
+               </h4>
+               <ul class="ui big horizontal list voters">
+                  
+                  <li>article title : {{this.articleSelected.title}} </li>
+                  <li>article link : {{this.articleSelected.link}} </li>
+                  <li>article votes : {{this.articleSelected.votes}} </li>
+                  
+                </ul>
+
+
+
+        </div>
+    
+
+
+
+
+
+    </td>
+  </tr>
+</table>
+
+<!-- <div class="ui grid posts"> 
+  <app-article *ngFor="let article of sortedArticles()"   
+   [article] ="article" >
+  </app-article>
+
+
+ 
+</div>
+ -->
+    
+<!-- ul>
+  <li *ngFor="let article of sortedArticles()"
+  
+  > article Title {{ article.title }}  
+
+</li>
+  </ul> 
+ -->

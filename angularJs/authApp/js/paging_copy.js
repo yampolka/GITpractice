@@ -1,9 +1,4 @@
-var express = require('express');
-var app = express();
-var cors = require('cors');
-var  app = express();
-
-app.use(cors());
+var app = angular.module('myApp', ['ui.bootstrap']);
 
 
 var itemsDetails = [
@@ -126,12 +121,12 @@ var server = app.listen(3000, function () {
 
 function addUser(login, pass ,name)
 {
-     let newuser =
-         {
-             "name": name,
-             "login":login,
-             "password":pass
-         }
+    let newuser =
+        {
+            "name": name,
+            "login":login,
+            "password":pass
+        }
     users.push(newuser);
     return true;
 }
@@ -172,3 +167,25 @@ app.get("/checkUser",function (req,res) {
         res.send("access denied");
     }
 });
+app.controller('ListController', function($scope){
+
+    $scope.curPage = 1,
+        $scope.itemsPerPage = 3,
+        $scope.maxSize = 5;
+
+    this.items = itemsDetails;
+
+
+    $scope.numOfPages = function () {
+        return Math.ceil(itemsDetails.length / $scope.itemsPerPage);
+
+    };
+
+    $scope.$watch('curPage + numPerPage', function() {
+        var begin = (($scope.curPage - 1) * $scope.itemsPerPage),
+            end = begin + $scope.itemsPerPage;
+
+        $scope.filteredItems = itemsDetails.slice(begin, end);
+    });
+});
+

@@ -1,5 +1,7 @@
-module.exports = class ProductsHandler{
-    constructor(coll){
+module.exports = class ProductsHandler
+{
+    constructor(coll)
+    {
         this.coll = coll;
     }
 
