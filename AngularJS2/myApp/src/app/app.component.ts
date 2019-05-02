@@ -39,7 +39,7 @@ export class AppComponent {
      
   public getData(){
     this.http.get(this.url).subscribe((data)=>{
-      console.log(data);
+      /* console.log(data);
       this.doctors =data; // /???
       console.log(this.doctors);
   
@@ -48,8 +48,15 @@ export class AppComponent {
         this.d = new Doctor(this.doctors[i].email);
         this.theDoctors.push(this.d ) ;
         console.log(this.theDoctors[i]);
+      } */
+       let a ="jjjjj";
+      for ( let doctor of data)
+      {
+        let d= new Doctor(doctor.email);
+        console.log(d);
+
       }
-        
+      console.log(a);
       });
    
 
