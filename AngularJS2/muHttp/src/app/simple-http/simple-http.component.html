@@ -1,0 +1,12 @@
+<p>
+  simple-http works!
+</p>
+
+<div *ngIf="this.loading" >Loading</div>
+<div>
+
+  <button type="button" (click)="makeRequest()">Make Request</button>
+
+  <pre>{{data | json}}</pre>
+
+</div>
