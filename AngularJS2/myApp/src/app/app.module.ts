@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
+import {DocComponent} from "./docComponent/doc.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DocComponent
   ],
   imports: [
     BrowserModule,

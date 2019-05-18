@@ -9,12 +9,13 @@ username:  string;
 website: string ;
 votes: number;
    
- constructor (email :string  )
+ constructor (obj :any)
 
      {
-       this.email =email;
-
-
+       this.email = obj.email;
+       this.name = obj.name;
+       this.id = obj.id;
+       this.username = obj.username;
      }
 
   }
