@@ -13,6 +13,18 @@ export class Services{
         this.socket.emit('new-message', text);
     }
 
+    public sendLike(){
+        this.socket.emit('set-like', {});
+    }
+    public getLikes(){
+        let self = this;
+        return Observable.create(function (observer) {
+            self.socket.on('recalc-like', function (like) {
+                
+                observer.next(like);
+            })
+        })
+    }
     public getMessages(){
         let self = this;
         return Observable.create(function (observer) {
