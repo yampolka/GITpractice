@@ -1,0 +1,25 @@
+<h1>users</h1>
+
+
+
+
+
+<div *ngFor= "let user of TestUsers; let i=index; "  >
+ <div  *ngIf="user.id">  
+<div> 
+{{user.name}}
+</div>
+<div>
+{{user.email}}<br/>
+{{i}}
+</div>
+<div >
+   
+    <input type="text"
+           id="user.id"
+                     
+           name="UserName"
+           [(ngModel)]="user.email"/> 
+ </div>
+</div>
+</div> 

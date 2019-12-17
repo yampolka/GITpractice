@@ -1,51 +1,35 @@
 import {Component} from '@angular/core';
-import {Question} from "./Interfaces/Question";
+import{Document,DocumentDetail,Question,Option,User ,
+    QuestionType,QuestionRadiolist,
+    QuestionText} from './Structure/Structure';
+import {VYTestService} from './Services/VYTestService';
+import { UserService } from './Services/UserService';
+import { RouterModule, Routes } from '@angular/router';
+//import {GetSomeUser} from  './Services/VYTestService'
+   
+
+
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    providers: [VYTestService]
 })
 
 
 export class AppComponent {
+// Fields
+    
+      
+    ngOnInit(){
 
-    QuestionArray: Array<Question> = [{
-        id: 1,
-        description: "what is your age range?",
-        type: 'select',
-        options: [
-            {
-                id: 11,
-                answer: '10-20',
-                selected: false
-            },
-            {
-                id: 12,
-                answer: '20-30',
-                selected: false
+        
+       
             }
-        ]
-    },
-        {
-            id: 2,
-            description: "Do you have a children?",
-            type: 'radio',
-            options: [
-                {
-                    id: 21,
-                    answer: 'yes',
-                    selected: false
-                },
-                {
-                    id: 22,
-                    answer: 'no',
-                    selected: false
-                }
-            ]
-        }];
 
-    constructor() {
-    }
+
+
+
 
 }
