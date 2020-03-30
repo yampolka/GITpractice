@@ -1,18 +1,18 @@
 <div class="container-fluid w-100 h-100">
-    <div class="row h-25">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center mx-auto mt-4"><h1>{{title}}</h1></div>
-        <div class="col-md-4"></div>
+  <div class="row h-25">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center mx-auto mt-4"><h1>{{title}}</h1></div>
+    <div class="col-md-4"></div>
+  </div>
+  <!--<button class="btn btn-primary" (click)="getData()"> get Data</button>-->
+  <div class="row w-100">
+    <div class="col-md-6">
+      <doc-comp *ngFor="let doc of doctors; let i = index" [DoctorInfo]="doc" (onShow)="showDocInfo($event)"></doc-comp>
     </div>
-    <!--<button class="btn btn-primary" (click)="getData()"> get Data</button>-->
-    <div class="row w-100">
-        <div class="col-md-6">
-            <doc-comp *ngFor="let doc of doctors; let i = index" [DoctorInfo]="doc" (onShow)="showDocInfo($event)"></doc-comp>
-        </div>
-        <div class="col-md-6" *ngIf="showDoctor">
-            <p> {{currentDoctor.name}} </p>
-            <p> {{currentDoctor.username}} </p>
-        </div>
+    <div class="col-md-6" *ngIf="showDoctor">
+      <p> {{currentDoctor.name}} </p>
+      <p> {{currentDoctor.username}} </p>
     </div>
+  </div>
 </div>
 
